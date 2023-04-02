@@ -42,6 +42,16 @@ func Pengecualian(pengeculaian string) map[string]string {
 	}
 }
 
+func KumpulanBarang(barang string) map[string]string {
+	if barang == "Kosong" {
+		return nil
+	} else {
+		return map[string]string{
+			"Barang": barang,
+		}
+	}
+}
+
 func main() {
 	var nama map[string]string = CekNama("")
 
@@ -74,4 +84,13 @@ func main() {
 	} else {
 		fmt.Println(pengecualian)
 	}
+
+	var contoh map[string]string = KumpulanBarang("Ada")
+
+	if contoh == nil {
+		fmt.Println("Barang Kosong")
+	} else {
+		fmt.Println(contoh)
+	}
+
 }
